@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+int main()
+{
+	printf("\n\t\t\t  --------------BINARY TO DECIMAL AND VICE VERSE---------------\n");
+	printf("\t\t\t  --------------------------------------------------------------\n");
+	printf("\n");
+	char ch;
+	int dec=0,bian[50],i=0,j=0,deci;
+	long int bia;
+	printf("\n\t\t\t\t\tEnter 'a' for binary to decimal convert.");
+	printf("\n\t\t\t\t\tEnter 'b' for decimal to binary convert.");
+	scanf("%s",&ch);
+	switch(ch)
+	{
+		case 'a':
+			printf("\t\t\t\t\tEnter your binary number : ");
+			scanf("\t\t\t\t\t%d",&bia);
+			while(bia>0)
+			{
+				dec=dec+(pow(2,i)*(bia%10));
+				bia=bia/10;
+				i++;
+			}
+			printf("\t\t\t\t\tThe decimal number of your input binary number is = %d",dec);
+			break;
+			
+		case 'b':
+			printf("\t\t\t\t\tEnter your decimal value : ");
+			scanf("\t\t\t\t\t%d",&deci);
+			while(deci>0)
+			{
+				bian[i]=deci%2;
+				deci=deci/2;
+				i++;
+			}
+			printf("\t\t\t\t\tThe binary number of your input decimal number is = ");
+			for(j=i-1;j>=0;j--)
+			printf("%d",bian[j]);
+			break;
+		
+		default:
+			printf("\t\t\t\t\tYour input is not acceptable.");
+			
+	return 0;
+	}
+	
+}
+
